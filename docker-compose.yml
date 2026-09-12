@@ -1,0 +1,79 @@
+services:
+
+  assessment-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: assessment-app
+    restart: unless-stopped
+    
+    ports:
+      - "8089:80"
+    environment:
+      APP_ENV: production
+      APP_URL: https://assessment.local:8443
+      DB_HOST: assessment-db
+      DB_PORT: 3306
+      DB_DATABASE: assessment
+      DB_USERNAME: assessment
+      DB_PASSWORD: ${DB_PASSWORD}
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+
+    depends_on:
+      assessment-db:
+        condition: service_healthy
+
+    networks:
+      - proxy-net
+      - assessment-db-net
+
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  assessment-db:
+    image: mariadb:11.4
+    container_name: assessment-db
+    restart: unless-stopped
+
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: assessment
+      MARIADB_USER: assessment
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+
+    volumes:
+      - assessment-db-data:/var/lib/mysql
+
+    networks:
+      - assessment-db-net
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+          "--innodb_initialized"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+networks:
+
+  proxy-net:
+    external: true
+
+  assessment-db-net:
+    name: assessment-db-net
+    driver: bridge
+
+volumes:
+  assessment-db-data:
+    name: assessment-db-data

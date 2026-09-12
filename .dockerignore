@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+
+database/mysql/
+
+storage/app.sqlite
+storage/logs/
+
+README.md
+
+Dockerfile
+docker-compose.yml
+
+backup-pre-mariadb-*/

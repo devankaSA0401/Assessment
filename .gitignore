@@ -1,0 +1,32 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime / local database
+/storage/app.sqlite
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+
+# Runtime logs
+*.log
+
+# Backup files
+*.bak
+*.BAK
+*.bak-*
+*.BAK-*
+
+# Local backup directories
+backup-*/
+*-backup-*/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Git temporary
+*.swp
+*.swo
