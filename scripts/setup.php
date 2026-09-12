@@ -215,7 +215,7 @@ try {
      * 5. Create default admin user if it does not exist
      */
     $adminEmail = getenv('ADMIN_EMAIL') ?: 'admin@example.com';
-    $adminPassword = getenv('ADMIN_PASSWORD') ?: 'REDACTED_ADMIN_PASSWORD';
+    $adminPassword = getenv('ADMIN_PASSWORD') ?: '';
 
     if (!filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
         throw new RuntimeException(

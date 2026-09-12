@@ -14,7 +14,7 @@ return [
     'db_port' => getenv('DB_PORT') ?: '3306',
     'db_name' => getenv('DB_DATABASE') ?: 'assessment',
     'db_user' => getenv('DB_USERNAME') ?: 'assessment',
-    'db_password' => getenv('DB_PASSWORD') ?: 'REDACTED_DB_PASSWORD',
+    'db_password' => getenv('DB_PASSWORD') ?: '',
 
     'upload_dir' => __DIR__ . '/../storage/uploads',
 
