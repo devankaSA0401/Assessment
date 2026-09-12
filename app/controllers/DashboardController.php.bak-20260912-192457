@@ -1,6 +1,0 @@
-require_once __DIR__.'/AssessmentController.php';
-<?php
-$db=Database::get();
-$assessments=$db->query('SELECT * FROM assessments ORDER BY id DESC')->fetchAll();
-foreach($assessments as &$a){ [$dummy,$params,$answers]=assessment_data((int)$a['id']); $s=calculate_score($params,$answers); $a['final_score']=$s['final']; $a['answered']=$s['answered']; $a['progress']=round($s['answered']*100/110,1); }
-$title='Dashboard'; ob_start(); require __DIR__.'/../views/dashboard/index.php'; $content=ob_get_clean(); require __DIR__.'/../views/layout.php';
