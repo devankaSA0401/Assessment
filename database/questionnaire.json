@@ -1,0 +1,948 @@
+[
+  {
+    "name": "SLA & Service Management",
+    "weight": 10,
+    "controls": [
+      {
+        "id": "SLA-01",
+        "question": "Apakah SLA layanan mailing terdokumentasi dan disepakati antara perusahaan dan DNET?",
+        "objective": "Memastikan target layanan memiliki dasar kontraktual",
+        "evidence": "SLA/Contract/Service Agreement",
+        "critical": true,
+        "recommendation": "Maintain documented and approved SLA"
+      },
+      {
+        "id": "SLA-02",
+        "question": "Apakah SLA mencakup target availability layanan email?",
+        "objective": "Memastikan availability terukur",
+        "evidence": "SLA report/Monthly report",
+        "critical": true,
+        "recommendation": "Define measurable availability target"
+      },
+      {
+        "id": "SLA-03",
+        "question": "Apakah SLA mencakup response time dan resolution time untuk incident?",
+        "objective": "Memastikan incident ditangani sesuai target",
+        "evidence": "SLA matrix/Ticket report",
+        "critical": true,
+        "recommendation": "Establish incident response and resolution targets"
+      },
+      {
+        "id": "SLA-04",
+        "question": "Apakah pencapaian SLA dimonitor dan dilaporkan secara berkala?",
+        "objective": "Memastikan performance vendor dapat dimonitor",
+        "evidence": "Monthly SLA report",
+        "critical": true,
+        "recommendation": "Provide periodic SLA performance report"
+      },
+      {
+        "id": "SLA-05",
+        "question": "Apakah terdapat escalation procedure untuk incident yang berdampak terhadap layanan?",
+        "objective": "Memastikan eskalasi berjalan jelas",
+        "evidence": "Escalation matrix/Procedure",
+        "critical": true,
+        "recommendation": "Establish documented escalation matrix"
+      },
+      {
+        "id": "SLA-06",
+        "question": "Apakah terdapat PIC teknis dan management yang dapat dihubungi saat terjadi incident?",
+        "objective": "Memastikan jalur komunikasi tersedia",
+        "evidence": "PIC list/Contact matrix",
+        "critical": true,
+        "recommendation": "Maintain updated 24x7 contact matrix"
+      },
+      {
+        "id": "SLA-07",
+        "question": "Apakah perubahan konfigurasi/service dilakukan melalui change management?",
+        "objective": "Mengurangi risiko perubahan yang tidak terkendali",
+        "evidence": "Change Management SOP/Sample change record",
+        "critical": true,
+        "recommendation": "Implement formal change management"
+      },
+      {
+        "id": "SLA-08",
+        "question": "Apakah maintenance terjadwal diinformasikan kepada customer sebelum pelaksanaan?",
+        "objective": "Mengurangi unexpected downtime",
+        "evidence": "Maintenance notification/sample",
+        "critical": false,
+        "recommendation": "Establish advance maintenance notification"
+      },
+      {
+        "id": "SLA-09",
+        "question": "Apakah service review dilakukan secara berkala dengan customer?",
+        "objective": "Mengevaluasi kualitas layanan dan improvement",
+        "evidence": "Meeting minutes/Service review report",
+        "critical": false,
+        "recommendation": "Conduct periodic service review"
+      },
+      {
+        "id": "SLA-10",
+        "question": "Apakah vendor memiliki mekanisme untuk menangani service degradation sebelum menjadi major incident?",
+        "objective": "Mendeteksi dan menangani gangguan lebih awal",
+        "evidence": "Monitoring/Procedure/Incident sample",
+        "critical": true,
+        "recommendation": "Implement proactive service monitoring"
+      }
+    ]
+  },
+  {
+    "name": "Email Security",
+    "weight": 15,
+    "controls": [
+      {
+        "id": "EMS-01",
+        "question": "Apakah layanan email dilindungi oleh anti-spam dan anti-malware gateway?",
+        "objective": "Mencegah malicious email masuk/keluar",
+        "evidence": "Architecture/Screenshot/Product configuration",
+        "critical": true,
+        "recommendation": "Implement and maintain email security gateway"
+      },
+      {
+        "id": "EMS-02",
+        "question": "Apakah terdapat proteksi terhadap phishing dan malicious URL/attachment?",
+        "objective": "Mengurangi risiko phishing dan malware",
+        "evidence": "Security configuration/Screenshot",
+        "critical": true,
+        "recommendation": "Enable phishing, URL and attachment protection"
+      },
+      {
+        "id": "EMS-03",
+        "question": "Apakah SPF diterapkan pada domain email perusahaan?",
+        "objective": "Mencegah spoofing menggunakan domain perusahaan",
+        "evidence": "DNS record/Screenshot",
+        "critical": true,
+        "recommendation": "Implement and maintain SPF"
+      },
+      {
+        "id": "EMS-04",
+        "question": "Apakah DKIM diterapkan untuk email outbound?",
+        "objective": "Menjamin authenticity email outbound",
+        "evidence": "DNS/configuration evidence",
+        "critical": true,
+        "recommendation": "Implement DKIM signing"
+      },
+      {
+        "id": "EMS-05",
+        "question": "Apakah DMARC diterapkan dan dimonitor?",
+        "objective": "Mengurangi domain spoofing dan phishing",
+        "evidence": "DNS record/DMARC report",
+        "critical": true,
+        "recommendation": "Implement DMARC and periodic monitoring"
+      },
+      {
+        "id": "EMS-06",
+        "question": "Apakah komunikasi SMTP menggunakan TLS/secure transport?",
+        "objective": "Melindungi data saat transit",
+        "evidence": "TLS configuration/Test result",
+        "critical": true,
+        "recommendation": "Enforce secure SMTP/TLS"
+      },
+      {
+        "id": "EMS-07",
+        "question": "Apakah terdapat monitoring terhadap aktivitas email abnormal?",
+        "objective": "Mendeteksi account compromise/abuse",
+        "evidence": "Monitoring dashboard/Alert sample",
+        "critical": true,
+        "recommendation": "Implement monitoring and alerting"
+      },
+      {
+        "id": "EMS-08",
+        "question": "Apakah terdapat mekanisme untuk menangani email account compromise?",
+        "objective": "Mempercepat containment account compromised",
+        "evidence": "Incident procedure/Incident sample",
+        "critical": true,
+        "recommendation": "Establish email compromise response procedure"
+      },
+      {
+        "id": "EMS-09",
+        "question": "Apakah email security engine/signature/rules diperbarui secara berkala?",
+        "objective": "Memastikan protection terhadap threat terbaru",
+        "evidence": "Update log/Configuration",
+        "critical": true,
+        "recommendation": "Maintain automatic and periodic security updates"
+      },
+      {
+        "id": "EMS-10",
+        "question": "Apakah konfigurasi keamanan email direview secara berkala?",
+        "objective": "Memastikan security control tetap efektif",
+        "evidence": "Review report/Checklist",
+        "critical": true,
+        "recommendation": "Conduct periodic email security configuration review"
+      }
+    ]
+  },
+  {
+    "name": "Network & Network Security",
+    "weight": 15,
+    "controls": [
+      {
+        "id": "NET-01",
+        "question": "Apakah network architecture layanan mailing terdokumentasi?",
+        "objective": "Memahami architecture dan security boundary",
+        "evidence": "Network diagram",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "NET-02",
+        "question": "Apakah firewall digunakan untuk membatasi akses ke layanan mailing?",
+        "objective": "Membatasi unauthorized network access",
+        "evidence": "Firewall architecture/rule sample",
+        "critical": true,
+        "recommendation": "Implement restrictive firewall policy"
+      },
+      {
+        "id": "NET-03",
+        "question": "Apakah terdapat network segmentation antara public-facing service dan internal infrastructure?",
+        "objective": "Mengurangi lateral movement",
+        "evidence": "Network diagram",
+        "critical": true,
+        "recommendation": "Implement appropriate network segmentation"
+      },
+      {
+        "id": "NET-04",
+        "question": "Apakah akses management ke network device dibatasi dan diamankan?",
+        "objective": "Melindungi privileged network access",
+        "evidence": "ACL/Management configuration",
+        "critical": true,
+        "recommendation": "Restrict and secure network management access"
+      },
+      {
+        "id": "NET-05",
+        "question": "Apakah terdapat DDoS protection untuk layanan mailing?",
+        "objective": "Menjaga availability terhadap DDoS",
+        "evidence": "DDoS architecture/service evidence",
+        "critical": true,
+        "recommendation": "Implement appropriate DDoS protection"
+      },
+      {
+        "id": "NET-06",
+        "question": "Apakah network device menggunakan secure management protocol?",
+        "objective": "Mencegah credential interception",
+        "evidence": "Configuration sample",
+        "critical": true,
+        "recommendation": "Disable insecure protocols and use SSH/SNMPv3"
+      },
+      {
+        "id": "NET-07",
+        "question": "Apakah network traffic/security event dimonitor secara berkala?",
+        "objective": "Mendeteksi anomalous traffic",
+        "evidence": "Monitoring dashboard/Alert",
+        "critical": true,
+        "recommendation": "Implement continuous network monitoring"
+      },
+      {
+        "id": "NET-08",
+        "question": "Apakah network infrastructure memiliki redundancy yang memadai?",
+        "objective": "Mengurangi single point of failure",
+        "evidence": "Architecture/HA configuration",
+        "critical": true,
+        "recommendation": "Implement network redundancy"
+      },
+      {
+        "id": "NET-09",
+        "question": "Apakah firewall/network rules direview secara berkala?",
+        "objective": "Menghilangkan unnecessary access",
+        "evidence": "Firewall review report",
+        "critical": true,
+        "recommendation": "Conduct periodic rule review"
+      },
+      {
+        "id": "NET-10",
+        "question": "Apakah vulnerability/security assessment dilakukan terhadap network infrastructure?",
+        "objective": "Mengidentifikasi kelemahan network",
+        "evidence": "Vulnerability scan/PT report",
+        "critical": true,
+        "recommendation": "Conduct periodic vulnerability assessment"
+      }
+    ]
+  },
+  {
+    "name": "Server & Server Security",
+    "weight": 10,
+    "controls": [
+      {
+        "id": "SRV-01",
+        "question": "Apakah server mailing menggunakan security hardening baseline?",
+        "objective": "Mengurangi attack surface",
+        "evidence": "Hardening checklist/Standard",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "SRV-02",
+        "question": "Apakah operating system dan application mendapatkan security patch secara berkala?",
+        "objective": "Mengurangi exploitable vulnerability",
+        "evidence": "Patch report",
+        "critical": true,
+        "recommendation": "Establish regular security patching"
+      },
+      {
+        "id": "SRV-03",
+        "question": "Apakah vulnerability scanning dilakukan terhadap server?",
+        "objective": "Mengidentifikasi vulnerability",
+        "evidence": "Vulnerability report",
+        "critical": true,
+        "recommendation": "Perform periodic vulnerability scanning"
+      },
+      {
+        "id": "SRV-04",
+        "question": "Apakah endpoint/server protection seperti EDR/anti-malware diterapkan jika applicable?",
+        "objective": "Mencegah malicious activity",
+        "evidence": "EDR dashboard/configuration",
+        "critical": true,
+        "recommendation": "Implement appropriate endpoint protection"
+      },
+      {
+        "id": "SRV-05",
+        "question": "Apakah privileged access ke server dibatasi?",
+        "objective": "Mengurangi unauthorized administrative access",
+        "evidence": "Access list/RBAC",
+        "critical": true,
+        "recommendation": "Apply least privilege"
+      },
+      {
+        "id": "SRV-06",
+        "question": "Apakah server security logs dikumpulkan dan dimonitor?",
+        "objective": "Mendukung detection dan investigation",
+        "evidence": "SIEM/logging configuration",
+        "critical": true,
+        "recommendation": "Centralize and monitor security logs"
+      },
+      {
+        "id": "SRV-07",
+        "question": "Apakah unnecessary service/port pada server dinonaktifkan?",
+        "objective": "Mengurangi attack surface",
+        "evidence": "Hardening report/Port scan",
+        "critical": true,
+        "recommendation": "Disable unnecessary services and ports"
+      },
+      {
+        "id": "SRV-08",
+        "question": "Apakah server configuration direview secara berkala?",
+        "objective": "Memastikan configuration tetap secure",
+        "evidence": "Review checklist/report",
+        "critical": false,
+        "recommendation": "Conduct periodic configuration review"
+      },
+      {
+        "id": "SRV-09",
+        "question": "Apakah terdapat secure baseline untuk server deployment baru?",
+        "objective": "Mencegah insecure deployment",
+        "evidence": "Build standard/template",
+        "critical": false,
+        "recommendation": "Establish secure server build baseline"
+      },
+      {
+        "id": "SRV-10",
+        "question": "Apakah server/application security testing dilakukan secara berkala?",
+        "objective": "Mengidentifikasi security weakness",
+        "evidence": "VA/PT/Application security report",
+        "critical": true,
+        "recommendation": "Conduct periodic security testing"
+      }
+    ]
+  },
+  {
+    "name": "Data Protection & Privacy",
+    "weight": 15,
+    "controls": [
+      {
+        "id": "DAT-01",
+        "question": "Apakah data/email customer diklasifikasikan dan dikelola berdasarkan sensitivity?",
+        "objective": "Memastikan data memiliki protection sesuai risiko",
+        "evidence": "Data classification policy",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "DAT-02",
+        "question": "Apakah data email dilindungi saat transit menggunakan encryption?",
+        "objective": "Melindungi confidentiality",
+        "evidence": "TLS configuration/Test",
+        "critical": true,
+        "recommendation": "Enforce encryption in transit"
+      },
+      {
+        "id": "DAT-03",
+        "question": "Apakah data/email yang tersimpan dilindungi dengan encryption at rest jika applicable?",
+        "objective": "Melindungi stored data",
+        "evidence": "Encryption configuration",
+        "critical": true,
+        "recommendation": "Implement encryption at rest"
+      },
+      {
+        "id": "DAT-04",
+        "question": "Apakah akses terhadap mailbox/data customer dibatasi berdasarkan role dan business need?",
+        "objective": "Mencegah unauthorized access",
+        "evidence": "RBAC/Access matrix",
+        "critical": true,
+        "recommendation": "Apply least privilege and RBAC"
+      },
+      {
+        "id": "DAT-05",
+        "question": "Apakah akses administrator/vendor terhadap data customer dimonitor dan dicatat?",
+        "objective": "Mendukung accountability",
+        "evidence": "Audit log/Access log",
+        "critical": true,
+        "recommendation": "Enable privileged access logging"
+      },
+      {
+        "id": "DAT-06",
+        "question": "Apakah terdapat data retention policy untuk email/customer data?",
+        "objective": "Mencegah excessive data retention",
+        "evidence": "Retention policy",
+        "critical": true,
+        "recommendation": "Define and enforce retention period"
+      },
+      {
+        "id": "DAT-07",
+        "question": "Apakah terdapat prosedur secure deletion setelah retention period berakhir?",
+        "objective": "Mencegah residual data exposure",
+        "evidence": "Data deletion procedure",
+        "critical": true,
+        "recommendation": "Implement secure data disposal"
+      },
+      {
+        "id": "DAT-08",
+        "question": "Apakah data customer dipisahkan dari customer lain secara logical/technical?",
+        "objective": "Mencegah cross-customer data exposure",
+        "evidence": "Architecture/Segmentation evidence",
+        "critical": true,
+        "recommendation": "Implement tenant/data segregation"
+      },
+      {
+        "id": "DAT-09",
+        "question": "Apakah vendor memiliki procedure untuk menangani data breach/privacy incident?",
+        "objective": "Memastikan privacy incident dapat ditangani",
+        "evidence": "Incident response procedure",
+        "critical": true,
+        "recommendation": "Establish data breach response procedure"
+      },
+      {
+        "id": "DAT-10",
+        "question": "Apakah penggunaan/sub-processing data customer oleh pihak ketiga dikontrol dan diinformasikan?",
+        "objective": "Mengontrol third-party data exposure",
+        "evidence": "Subprocessor list/Contract/Policy",
+        "critical": true,
+        "recommendation": "Maintain approved subprocessor governance"
+      }
+    ]
+  },
+  {
+    "name": "DC Operation",
+    "weight": 10,
+    "controls": [
+      {
+        "id": "DCO-01",
+        "question": "Apakah DC memiliki monitoring operasional 24x7?",
+        "objective": "Menjamin early detection",
+        "evidence": "NOC/DC monitoring dashboard",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "DCO-02",
+        "question": "Apakah monitoring mencakup server, network, storage dan environmental condition?",
+        "objective": "Memastikan infrastructure health terpantau",
+        "evidence": "Monitoring dashboard",
+        "critical": true,
+        "recommendation": "Implement comprehensive infrastructure monitoring"
+      },
+      {
+        "id": "DCO-03",
+        "question": "Apakah terdapat operational SOP untuk pengelolaan layanan mailing?",
+        "objective": "Memastikan operation konsisten",
+        "evidence": "SOP/Runbook",
+        "critical": false,
+        "recommendation": "Maintain operational runbook"
+      },
+      {
+        "id": "DCO-04",
+        "question": "Apakah maintenance DC dilakukan berdasarkan prosedur yang terdokumentasi?",
+        "objective": "Mengurangi operational error",
+        "evidence": "Maintenance SOP/Record",
+        "critical": false,
+        "recommendation": "Formalize maintenance procedure"
+      },
+      {
+        "id": "DCO-05",
+        "question": "Apakah terdapat capacity monitoring untuk infrastructure?",
+        "objective": "Mencegah resource exhaustion",
+        "evidence": "Capacity report",
+        "critical": true,
+        "recommendation": "Implement capacity monitoring and forecasting"
+      },
+      {
+        "id": "DCO-06",
+        "question": "Apakah power infrastructure memiliki redundancy yang memadai?",
+        "objective": "Menjaga availability",
+        "evidence": "UPS/Power architecture",
+        "critical": true,
+        "recommendation": "Maintain redundant power infrastructure"
+      },
+      {
+        "id": "DCO-07",
+        "question": "Apakah cooling/environmental condition dimonitor?",
+        "objective": "Mencegah hardware/environment failure",
+        "evidence": "DC monitoring report",
+        "critical": true,
+        "recommendation": "Maintain environmental monitoring"
+      },
+      {
+        "id": "DCO-08",
+        "question": "Apakah terdapat preventive maintenance terhadap infrastructure?",
+        "objective": "Mengurangi unexpected failure",
+        "evidence": "Maintenance record",
+        "critical": false,
+        "recommendation": "Implement preventive maintenance schedule"
+      },
+      {
+        "id": "DCO-09",
+        "question": "Apakah operational logs/activity dicatat dan disimpan?",
+        "objective": "Mendukung auditability",
+        "evidence": "Operation log/Sample",
+        "critical": false,
+        "recommendation": "Maintain operational activity logs"
+      },
+      {
+        "id": "DCO-10",
+        "question": "Apakah operational procedure direview dan diperbarui secara berkala?",
+        "objective": "Menjaga relevansi SOP",
+        "evidence": "Review record/Document revision",
+        "critical": false,
+        "recommendation": "Perform periodic SOP review"
+      }
+    ]
+  },
+  {
+    "name": "Physical Security",
+    "weight": 5,
+    "controls": [
+      {
+        "id": "PHY-01",
+        "question": "Apakah akses ke DC menggunakan access control?",
+        "objective": "Mencegah unauthorized physical access",
+        "evidence": "Access control system/photo/policy",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "PHY-02",
+        "question": "Apakah akses personel ke DC berdasarkan authorization?",
+        "objective": "Memastikan hanya authorized personnel yang dapat masuk",
+        "evidence": "Access list",
+        "critical": true,
+        "recommendation": "Enforce authorized access list"
+      },
+      {
+        "id": "PHY-03",
+        "question": "Apakah visitor/vendor access dicatat dan didampingi sesuai policy?",
+        "objective": "Mengontrol third-party physical access",
+        "evidence": "Visitor log/Procedure",
+        "critical": true,
+        "recommendation": "Maintain visitor management"
+      },
+      {
+        "id": "PHY-04",
+        "question": "Apakah CCTV digunakan untuk monitoring area critical?",
+        "objective": "Mendukung detection/investigation",
+        "evidence": "CCTV coverage/policy",
+        "critical": true,
+        "recommendation": "Maintain CCTV coverage"
+      },
+      {
+        "id": "PHY-05",
+        "question": "Apakah CCTV recording disimpan sesuai retention requirement?",
+        "objective": "Mendukung forensic investigation",
+        "evidence": "Retention/configuration",
+        "critical": false,
+        "recommendation": "Define and maintain CCTV retention"
+      },
+      {
+        "id": "PHY-06",
+        "question": "Apakah terdapat environmental monitoring di DC?",
+        "objective": "Mendeteksi fire, temperature, humidity, water leak",
+        "evidence": "Sensor/Monitoring evidence",
+        "critical": true,
+        "recommendation": "Implement environmental monitoring"
+      },
+      {
+        "id": "PHY-07",
+        "question": "Apakah fire detection/suppression system tersedia?",
+        "objective": "Mengurangi physical disaster risk",
+        "evidence": "Fire system certificate/photo",
+        "critical": true,
+        "recommendation": "Maintain certified fire protection"
+      },
+      {
+        "id": "PHY-08",
+        "question": "Apakah terdapat protection terhadap unauthorized removal of equipment/media?",
+        "objective": "Mencegah theft/data loss",
+        "evidence": "Physical security policy",
+        "critical": true,
+        "recommendation": "Implement asset/media control"
+      },
+      {
+        "id": "PHY-09",
+        "question": "Apakah physical access logs direview secara berkala?",
+        "objective": "Mendeteksi anomalous physical access",
+        "evidence": "Access log/review report",
+        "critical": false,
+        "recommendation": "Periodically review physical access logs"
+      },
+      {
+        "id": "PHY-10",
+        "question": "Apakah terdapat prosedur emergency physical incident?",
+        "objective": "Memastikan response terhadap physical emergency",
+        "evidence": "Emergency procedure",
+        "critical": false,
+        "recommendation": "Maintain emergency response procedure"
+      }
+    ]
+  },
+  {
+    "name": "Backup & Restore",
+    "weight": 5,
+    "controls": [
+      {
+        "id": "BAK-01",
+        "question": "Apakah backup email/system dilakukan secara berkala?",
+        "objective": "Menjamin recoverability",
+        "evidence": "Backup policy/Job report",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "BAK-02",
+        "question": "Apakah backup memiliki retention period yang terdokumentasi?",
+        "objective": "Menjamin availability historical data",
+        "evidence": "Backup policy",
+        "critical": true,
+        "recommendation": "Define backup retention"
+      },
+      {
+        "id": "BAK-03",
+        "question": "Apakah backup dipisahkan dari production environment?",
+        "objective": "Mengurangi ransomware/single point of failure",
+        "evidence": "Backup architecture",
+        "critical": true,
+        "recommendation": "Maintain isolated backup"
+      },
+      {
+        "id": "BAK-04",
+        "question": "Apakah backup dilindungi dari unauthorized access?",
+        "objective": "Menjaga confidentiality/integrity backup",
+        "evidence": "Access control/configuration",
+        "critical": true,
+        "recommendation": "Apply least privilege to backup"
+      },
+      {
+        "id": "BAK-05",
+        "question": "Apakah backup data dienkripsi?",
+        "objective": "Melindungi backup data",
+        "evidence": "Encryption configuration",
+        "critical": true,
+        "recommendation": "Encrypt sensitive backups"
+      },
+      {
+        "id": "BAK-06",
+        "question": "Apakah backup job dimonitor dan failure di-alert?",
+        "objective": "Mencegah backup failure tidak terdeteksi",
+        "evidence": "Backup dashboard/Alert",
+        "critical": true,
+        "recommendation": "Implement backup monitoring"
+      },
+      {
+        "id": "BAK-07",
+        "question": "Apakah restore test dilakukan secara berkala?",
+        "objective": "Membuktikan backup benar-benar recoverable",
+        "evidence": "Restore test report",
+        "critical": true,
+        "recommendation": "Conduct periodic restore testing"
+      },
+      {
+        "id": "BAK-08",
+        "question": "Apakah hasil restore test didokumentasikan?",
+        "objective": "Menjamin evidence recoverability",
+        "evidence": "Restore test report",
+        "critical": true,
+        "recommendation": "Document restore test results"
+      },
+      {
+        "id": "BAK-09",
+        "question": "Apakah backup protection mencakup konfigurasi/application data yang diperlukan untuk recovery?",
+        "objective": "Memastikan complete recovery",
+        "evidence": "Backup scope/documentation",
+        "critical": true,
+        "recommendation": "Define complete recovery backup scope"
+      },
+      {
+        "id": "BAK-10",
+        "question": "Apakah terdapat prosedur backup failure dan recovery escalation?",
+        "objective": "Memastikan backup issue ditangani",
+        "evidence": "Procedure/Incident sample",
+        "critical": false,
+        "recommendation": "Establish backup failure response"
+      }
+    ]
+  },
+  {
+    "name": "BCP / DR & Incident Response",
+    "weight": 10,
+    "controls": [
+      {
+        "id": "BCP-01",
+        "question": "Apakah vendor memiliki Business Continuity Plan untuk layanan mailing?",
+        "objective": "Menjamin continuity layanan",
+        "evidence": "BCP document",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "BCP-02",
+        "question": "Apakah vendor memiliki Disaster Recovery Plan?",
+        "objective": "Memastikan recovery saat major disaster",
+        "evidence": "DRP document",
+        "critical": true,
+        "recommendation": "Maintain documented DRP"
+      },
+      {
+        "id": "BCP-03",
+        "question": "Apakah RTO layanan mailing ditentukan?",
+        "objective": "Menentukan maximum recovery target",
+        "evidence": "BCP/DRP/SLA",
+        "critical": true,
+        "recommendation": "Define RTO"
+      },
+      {
+        "id": "BCP-04",
+        "question": "Apakah RPO layanan mailing ditentukan?",
+        "objective": "Menentukan acceptable data loss",
+        "evidence": "BCP/DRP/Backup policy",
+        "critical": true,
+        "recommendation": "Define RPO"
+      },
+      {
+        "id": "BCP-05",
+        "question": "Apakah terdapat redundancy/failover untuk critical mailing infrastructure?",
+        "objective": "Mengurangi service interruption",
+        "evidence": "HA/DR architecture",
+        "critical": true,
+        "recommendation": "Implement appropriate redundancy"
+      },
+      {
+        "id": "BCP-06",
+        "question": "Apakah DR/failover test dilakukan secara berkala?",
+        "objective": "Membuktikan DR capability",
+        "evidence": "DR test report",
+        "critical": true,
+        "recommendation": "Conduct periodic DR exercise"
+      },
+      {
+        "id": "BCP-07",
+        "question": "Apakah terdapat Incident Response Plan yang terdokumentasi?",
+        "objective": "Menjamin structured incident handling",
+        "evidence": "IRP document",
+        "critical": true,
+        "recommendation": "Maintain documented incident response plan"
+      },
+      {
+        "id": "BCP-08",
+        "question": "Apakah terdapat incident severity classification dan escalation procedure?",
+        "objective": "Menjamin incident diprioritaskan",
+        "evidence": "Incident matrix/SOP",
+        "critical": true,
+        "recommendation": "Establish severity and escalation matrix"
+      },
+      {
+        "id": "BCP-09",
+        "question": "Apakah security incident dikomunikasikan kepada customer sesuai SLA/contract?",
+        "objective": "Memastikan customer awareness dan response",
+        "evidence": "Incident communication procedure/sample",
+        "critical": true,
+        "recommendation": "Define customer notification requirements"
+      },
+      {
+        "id": "BCP-10",
+        "question": "Apakah post-incident review/root cause analysis dilakukan setelah major incident?",
+        "objective": "Mencegah recurrence",
+        "evidence": "RCA/Post Incident Report",
+        "critical": true,
+        "recommendation": "Perform RCA and corrective action"
+      }
+    ]
+  },
+  {
+    "name": "IAM / Access Management",
+    "weight": 5,
+    "controls": [
+      {
+        "id": "IAM-01",
+        "question": "Apakah setiap administrator memiliki individual account?",
+        "objective": "Menjamin accountability",
+        "evidence": "Account list",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "IAM-02",
+        "question": "Apakah MFA diterapkan pada privileged/administrative access?",
+        "objective": "Mencegah credential compromise",
+        "evidence": "MFA configuration/screenshot",
+        "critical": true,
+        "recommendation": "Enforce MFA for privileged access"
+      },
+      {
+        "id": "IAM-03",
+        "question": "Apakah access diberikan berdasarkan least privilege?",
+        "objective": "Membatasi unauthorized activity",
+        "evidence": "RBAC/Access matrix",
+        "critical": true,
+        "recommendation": "Implement least privilege"
+      },
+      {
+        "id": "IAM-04",
+        "question": "Apakah privileged access direview secara berkala?",
+        "objective": "Menghapus unnecessary privilege",
+        "evidence": "Access review report",
+        "critical": true,
+        "recommendation": "Conduct periodic privileged access review"
+      },
+      {
+        "id": "IAM-05",
+        "question": "Apakah user account termination/revocation dilakukan ketika personel keluar atau berubah role?",
+        "objective": "Mencegah orphaned access",
+        "evidence": "Offboarding procedure/sample",
+        "critical": true,
+        "recommendation": "Implement timely access revocation"
+      },
+      {
+        "id": "IAM-06",
+        "question": "Apakah password policy diterapkan untuk applicable accounts?",
+        "objective": "Meningkatkan credential security",
+        "evidence": "Password policy/configuration",
+        "critical": true,
+        "recommendation": "Enforce strong authentication policy"
+      },
+      {
+        "id": "IAM-07",
+        "question": "Apakah privileged activity dicatat dan dimonitor?",
+        "objective": "Mendukung accountability dan detection",
+        "evidence": "Audit log/SIEM",
+        "critical": true,
+        "recommendation": "Monitor privileged activity"
+      },
+      {
+        "id": "IAM-08",
+        "question": "Apakah access ke customer environment dipisahkan berdasarkan tenant/customer?",
+        "objective": "Mencegah cross-customer access",
+        "evidence": "RBAC/Architecture",
+        "critical": true,
+        "recommendation": "Enforce tenant-level access segregation"
+      },
+      {
+        "id": "IAM-09",
+        "question": "Apakah emergency/break-glass account dikontrol dan dimonitor?",
+        "objective": "Mengurangi abuse of emergency access",
+        "evidence": "Account policy/log",
+        "critical": true,
+        "recommendation": "Secure and monitor emergency accounts"
+      },
+      {
+        "id": "IAM-10",
+        "question": "Apakah access management policy direview secara berkala?",
+        "objective": "Menjaga IAM governance",
+        "evidence": "Policy review record",
+        "critical": false,
+        "recommendation": "Conduct periodic IAM policy review"
+      }
+    ]
+  },
+  {
+    "name": "Compliance & Governance",
+    "weight": 5,
+    "controls": [
+      {
+        "id": "GOV-01",
+        "question": "Apakah vendor memiliki information security policy yang terdokumentasi?",
+        "objective": "Memastikan security governance formal",
+        "evidence": "Information Security Policy",
+        "critical": true,
+        "recommendation": ""
+      },
+      {
+        "id": "GOV-02",
+        "question": "Apakah vendor memiliki security risk management process?",
+        "objective": "Memastikan security risk diidentifikasi dan dikelola",
+        "evidence": "Risk assessment/methodology",
+        "critical": true,
+        "recommendation": "Establish formal risk management"
+      },
+      {
+        "id": "GOV-03",
+        "question": "Apakah vendor memiliki sertifikasi/attestation keamanan yang relevan seperti ISO 27001 atau SOC 2 jika applicable?",
+        "objective": "Memberikan assurance independen",
+        "evidence": "Certificate/Attestation",
+        "critical": false,
+        "recommendation": "Obtain/maintain relevant security certification"
+      },
+      {
+        "id": "GOV-04",
+        "question": "Apakah security policy dan control direview secara berkala oleh management?",
+        "objective": "Memastikan management oversight",
+        "evidence": "Management review/minutes",
+        "critical": false,
+        "recommendation": "Conduct periodic management review"
+      },
+      {
+        "id": "GOV-05",
+        "question": "Apakah security awareness training diberikan kepada personnel?",
+        "objective": "Mengurangi human-related security risk",
+        "evidence": "Training record",
+        "critical": false,
+        "recommendation": "Conduct periodic security awareness training"
+      },
+      {
+        "id": "GOV-06",
+        "question": "Apakah vendor melakukan vulnerability management secara formal?",
+        "objective": "Memastikan vulnerability ditangani",
+        "evidence": "Vulnerability management policy/report",
+        "critical": true,
+        "recommendation": "Establish formal vulnerability management"
+      },
+      {
+        "id": "GOV-07",
+        "question": "Apakah vendor melakukan penetration testing/security assessment secara berkala?",
+        "objective": "Menguji effectiveness security control",
+        "evidence": "Pentest/security assessment report",
+        "critical": true,
+        "recommendation": "Conduct periodic independent security testing"
+      },
+      {
+        "id": "GOV-08",
+        "question": "Apakah terdapat internal/external audit terhadap information security control?",
+        "objective": "Memberikan assurance terhadap control",
+        "evidence": "Audit report",
+        "critical": false,
+        "recommendation": "Conduct periodic security audit"
+      },
+      {
+        "id": "GOV-09",
+        "question": "Apakah third-party/subcontractor security risk dikelola?",
+        "objective": "Mengurangi supply-chain security risk",
+        "evidence": "Third-party policy/list/assessment",
+        "critical": true,
+        "recommendation": "Implement third-party risk management"
+      },
+      {
+        "id": "GOV-10",
+        "question": "Apakah security findings memiliki corrective action dan tracking sampai closed?",
+        "objective": "Memastikan finding benar-benar diperbaiki",
+        "evidence": "Finding tracker/CAPA report",
+        "critical": true,
+        "recommendation": "Maintain corrective action tracking"
+      }
+    ]
+  }
+]
